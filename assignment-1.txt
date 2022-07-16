@@ -1,0 +1,113 @@
+1.
+#include<stdio.h>
+int main()
+{
+    printf("Hello students");
+    return 0;
+}
+
+2.
+#include<stdio.h>
+int main()
+{
+    printf("Hello\nstudents");
+    return 0;
+}
+
+3.
+#include<stdio.h>
+int main()
+{
+    printf("\"MySirg\"");
+    return 0;
+}
+
+4.
+#include<stdio.h>
+int main()
+{
+    float r,area;
+    printf("enter radius: \n");
+    scanf("%f",&r);
+    area=r*r*3.14;
+    printf("Area of circle is:%f having radius %f",area,r);
+    return 0;
+}
+
+
+5.
+#include<stdio.h>
+int main()
+{
+    int l;
+    l=printf("Mysirg\n");
+    printf("length of a string printed is :%d",l-1);
+}
+
+6.
+#include<stdio.h>
+int main()
+{
+    printf("\"Hello,Saurabh Kumar\"");
+    return 0;
+}
+
+7.
+#include<stdio.h>
+int main()
+{
+    char a,b;
+    a='%';
+    b='d';
+    printf("%c%c",a,b);
+    return 0;
+}
+
+8.
+#include<stdio.h>
+int main()
+{
+    char a,b;
+
+    b='n';
+    printf("\\%c",b);
+    return 0;
+}
+
+9.
+#include<stdio.h>
+int main()
+{
+
+    printf("\\\\");
+    return 0;
+}
+
+10.
+#include<stdio.h>
+int main()
+{
+
+    int d,m,y;
+    printf("Enter a date in DD/MM/YYYY format: \n");
+    scanf("%d/%d/%d",&d,&m,&y);
+    printf("Day-%d,Month-%d,Year-%d",d,m,y);
+    return 0;
+}
+
+11.
+#include<stdio.h>
+int main()
+{
+
+    int h,m;
+    printf("Enter a time in HH:MM format: \n");
+    scanf("%d:%d",&h,&m);
+    printf("%d Hour and %d Minute",h,m);
+    return 0;
+}
+
+12.
+Output:ineuron7
+
+
