@@ -1,0 +1,240 @@
+1.
+#include<stdio.h>
+int main()
+{
+    int a[10],sum=0,i;
+    printf("enter 10 numbers:\n");
+    for(i=0;i<=9;i++)
+        scanf("%d",&a[i]);
+    for(i=0;i<=9;i++)
+        sum=sum+a[i];
+    printf("sum is %d",sum);
+    return 0;
+}
+2.
+#include<stdio.h>
+int main()
+{
+    float a[10],sum=0;int i;
+    float avg;
+    printf("enter 10 numbers:\n");
+    for(i=0;i<=9;i++)
+        scanf("%f",&a[i]);
+    for(i=0;i<=9;i++)
+        sum=sum+a[i];
+        avg=sum/10;
+    printf("average is %f",avg);
+    return 0;
+}
+3.
+#include<stdio.h>
+int main()
+{
+    int a[10],sumodd=0,sumeven=0,i;
+    printf("enter 10 numbers:\n");
+    for(i=0;i<=9;i++)
+        scanf("%d",&a[i]);
+    for(i=0;i<=9;i++)
+        {
+            if(a[i]%2)
+            sumodd=sumodd+a[i];
+            else
+            sumeven=sumeven+a[i];
+        }
+    printf("sum of odd is %d and sum of even is %d",sumodd,sumeven);
+    return 0;
+}
+4.
+#include<stdio.h>
+int main()
+{
+    int a[10],x,i;
+    printf("enter 10 numbers:\n");
+    for(i=0;i<=9;i++)
+        scanf("%d",&a[i]);
+        x=a[0];
+    for(i=0;i<=9;i++)
+        {
+            if(a[i]>x)
+             x=a[i];
+        }
+
+    printf("greatest number is %d",x);
+    return 0;
+}
+5.
+#include<stdio.h>
+int main()
+{
+    int a[10],x,i;
+    printf("enter 10 numbers:\n");
+    for(i=0;i<=9;i++)
+        scanf("%d",&a[i]);
+        x=a[0];
+    for(i=0;i<=9;i++)
+        {
+            if(a[i]<x)
+             x=a[i];
+        }
+    printf("smallest number is %d",x);
+    return 0;
+}
+6.
+#include<stdio.h>
+int main()
+{
+
+ int i,j,m=0,x,a[10],b[10],k[10],w;
+ printf("enter 10 numbers: \n");
+ for(i=0;i<=9;i++)
+    scanf("%d",&a[i]);
+    while(1)
+ {
+     i=0;j=0;
+
+     while(m!=0)
+     {
+         if(i!=k[j])
+         {
+             j++;
+         }
+         else
+         {
+             i++;
+             j=0;
+         }
+         if(j==m)
+           break;
+
+     }
+     x=a[i];
+     for(i=0;i<=9;i++)
+     {
+         j=0;
+         while(m!=0)
+     {
+         if(i!=k[j])
+         {
+             j++;
+             if(j==m)
+                break;
+
+         }
+
+        else
+         {
+             i++;
+             j=0;
+         }
+     }
+     if(a[i]<=x&&i<10)
+        {x=a[i]; w=i;}
+     }
+     k[m]=w;
+     b[m]=x;
+     printf("%d ",b[m]);
+     m++;
+     if(m==10)
+        break;
+ }
+ return 0;
+}
+7.
+#include<stdio.h>
+int main()
+{
+    int a[10],x,i,w=0;
+    printf("enter 10 numbers:\n");
+    for(i=0;i<=9;i++)
+        scanf("%d",&a[i]);
+        x=a[0];
+    for(i=0;i<=9;i++)
+        {
+            if(a[i]>x)
+             x=a[i];
+        }
+        while(1)
+        {
+            x--;
+            for(i=0;i<=9;i++)
+            {
+                if(a[i]==x)
+                    {
+                        printf("second largest number is %d",a[i]);
+                        w=1;
+                        break;
+                    }
+            }
+            if(w==1)
+                break;
+
+        }
+        return 0;
+}
+8.
+#include<stdio.h>
+int main()
+{
+    int a[10],x,i,w=0;
+    printf("enter 10 numbers:\n");
+    for(i=0;i<=9;i++)
+        scanf("%d",&a[i]);
+        x=a[0];
+    for(i=0;i<=9;i++)
+        {
+            if(a[i]<x)
+             x=a[i];
+        }
+        while(1)
+        {
+            x++;
+            for(i=0;i<=9;i++)
+            {
+                if(a[i]==x)
+                    {
+                        printf("second smallest number is %d",a[i]);
+                        w=1;
+                        break;
+                    }
+            }
+            if(w==1)
+                break;
+
+        }
+        return 0;
+}
+9.
+#include<stdio.h>
+int main()
+{
+    int x,i,w=0,n;
+    printf("enter number of a numbers you want to enter:\n");
+    scanf("%d",&n);
+    printf("enter %d numbers:\n",n);
+    int a[n];
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+    for(i=n-1;i>=0;i--)
+        printf("%d ",a[i]);
+
+        return 0;
+}
+
+10.
+#include<stdio.h>
+int main()
+{
+    int a[10],b[10],i;
+    printf("enter 10 numbers:\n");
+       for(i=0;i<=9;i++)
+        {
+            scanf("%d",&a[i]);
+            b[i]=a[i];
+        }
+    for(i=0;i<=9;i++)
+        printf("%d ",b[i]);
+
+        return 0;
+}
+
+
