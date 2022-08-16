@@ -1,0 +1,351 @@
+1.
+#include<stdio.h>
+int main()
+{
+    int a[10],i,j,x=0;
+    printf("enter 10 numbers:\n");
+    for(i=0;i<=9;i++)
+       {
+
+         scanf("%d",&a[i]);
+       }
+
+    for(i=0;i<=9;i++)
+    {
+
+        {
+            if(a[i]>x)
+                x=a[i];
+        }
+    }
+    printf("greatest number is:%d",x);
+    return 0;
+}
+
+
+2.
+#include<stdio.h>
+int main()
+{
+    int a[10],i,j,x;
+    printf("enter 10 numbers:\n");
+    for(i=0;i<=9;i++)
+       {
+
+         scanf("%d",&a[i]);
+       }
+
+    for(i=0;i<=9;i++)
+    {
+
+        {
+            if(a[i]<x)
+                x=a[i];
+        }
+    }
+    printf("smallest number is:%d",x);
+    return 0;
+}
+
+
+3.
+#include<stdio.h>
+int main()
+{
+    int a[10],i,j,x;
+    printf("enter 10 numbers:\n");
+    for(i=0;i<10;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<10;i++)
+        {
+            for(j=i;j<10;j++)
+             {
+                if(a[i]>a[j])
+                  {
+                     x=a[i];
+                     a[i]=a[j];
+                     a[j]=x;
+                  }
+             }
+               printf("%d ",a[i]);
+        }
+    return 0;
+}
+
+4.
+#include<stdio.h>
+void sort(int[],int,int);
+int main()
+{
+
+ int a[5],i,d,n;
+ printf("enter 5 numbers: \n");
+ for(i=0;i<=4;i++)
+    scanf("%d",&a[i]);
+ printf("enter direction as left=1,Right=2: and positions no:\n");
+ scanf("%d%d",&d,&n);
+    rotate(a,d,n);
+  return 0;
+}
+void rotate(int a[],int d,int n)
+{
+    int i,l,b[5];
+    for(i=0;i<=4;i++)
+        b[i]=a[i];
+    if(d==1)
+    {
+        l=5;
+        for(i=0;i<n;i++)
+            a[l-n+i]=b[i];
+        for(i=0;i<l-n;i++)
+            a[i]=b[n+i];
+    }
+    if(d==2)
+    {
+        l=5;
+        for(i=0;i<l-n;i++)
+            a[n+i]=b[i];
+        for(i=1;i<=n;i++)
+            a[n-i]=b[l-i];
+    }
+    for(i=0;i<=4;i++)
+        printf("%d ",a[i]);
+}
+
+5.
+#include<stdio.h>
+int duplicate(int a[],int);
+int main()
+{
+    int a[10],i;
+    printf("enter 10 numbers:\n");
+    for(i=0;i<=9;i++)
+        scanf("%d",&a[i]);
+    int n=duplicate(a,10);
+    printf("%d",a[i]);
+    return 0;
+}
+int duplicate(int a[],int size)
+{
+    int i;
+    for(i=0;i<size;i++)
+    {
+        if(a[i]==a[i+1])
+        {
+            printf("At %d place first occurence.\n",i+1);
+            return a[i];
+        }
+    }
+}
+
+6.
+#include<stdio.h>
+void input(int a[],int);
+int main()
+{
+    int a[10];
+    input(a,10);
+    return 0;
+}
+void input(int a[],int size)
+{
+    int i;
+    printf("enter 10 numbers:\n");
+    for(i=0;i<size;i++)
+        scanf("%d",&a[i]);
+    for(i=size-1;i>=0;i--)
+    printf("%d ",a[i]);
+
+}
+
+7.
+#include<stdio.h>
+int duplicate(int a[],int);
+int main()
+{
+    int a[10],i;
+    printf("enter 10 numbers:\n");
+    for(i=0;i<10;i++)
+        scanf("%d",&a[i]);
+    int no=duplicate(a,10);
+    printf("%d",no);
+    return 0;
+}
+int duplicate(int a[],int size)
+{
+    int i,j,count=0,b[size],m=0,k=0;
+    for(i=0;i<size;i++)
+        for(j=i+1;j<size;j++)
+    {
+        if(a[i]==a[j]&&j<10)
+        {
+            for(k=0;k<m;k++)
+            {
+                if(j==b[k])
+                    break;
+            }
+            if(k==m)
+            {
+                count++;
+                b[m]=j;
+                m++;
+            }
+        }
+    }
+    return count;
+}
+
+8.
+#include<stdio.h>
+void unique(int a[],int);
+int main()
+{
+    int a[10],i;
+    printf("enter 10 numbers:\n");
+    for(i=0;i<10;i++)
+        scanf("%d",&a[i]);
+    unique(a,10);
+    return 0;
+}
+void unique(int a[],int size)
+{
+    int i,j=0,b[size],m=0;
+    for(i=0;i<size;i++)
+     {
+         for(j=0;j<m;j++)
+    {
+        if(a[i]==b[j])
+        {
+            break;
+        }
+
+    }
+    if(j==m)
+        {
+            printf("%d ",a[i]);
+            b[m]=a[i];
+            m++;
+        }
+     }
+}
+
+9.
+#include<stdio.h>
+void unique(int a[],int b[],int);
+int main()
+{
+    int a[10],b[10],i;
+    printf("enter 10 numbers:\n");
+    for(i=0;i<10;i++)
+        scanf("%d",&a[i]);
+    printf("enter 10 numbers:\n");
+    for(i=0;i<10;i++)
+        scanf("%d",&b[i]);
+    merge(a,b,10);
+    return 0;
+}
+void merge(int a[],int b[],int size)
+{
+    int i,j=0,c[size+size],m=0;
+    for(i=0;i<size*2;i++)
+     {
+         if(i<size)
+         c[i]=a[i];
+         else
+            c[i]=b[i-size];
+     }
+     sort(c,size*2);
+}
+void sort(int c[],int n)
+{
+    int i,j,m=0,x,b[n],k[n],w;
+    printf("\n");
+    while(1)
+ {
+     i=0;j=0;
+
+     while(m!=0)
+     {
+         if(i!=k[j])
+         {
+             j++;
+         }
+         else
+         {
+             i++;
+             j=0;
+         }
+         if(j==m)
+           break;
+
+     }
+     x=c[i];
+     for(i=0;i<n;i++)
+     {
+         j=0;
+         while(m!=0)
+     {
+         if(i!=k[j])
+         {
+             j++;
+             if(j==m)
+                break;
+
+         }
+
+
+         else
+         {
+             i++;
+             j=0;
+         }
+     }
+     if(c[i]>=x&&i<20)
+        {x=c[i]; w=i;}
+     }
+     k[m]=w;
+     b[m]=x;
+     printf("%d ",b[m]);
+     m++;
+     if(m==20)
+        break;
+ }
+}
+
+10.
+#include<stdio.h>
+void count(int [],int);
+int main()
+{
+    int a[10],i;
+    printf("Enter 10 numbers:\n");
+    for(i=0;i<10;i++)
+        scanf("%d",&a[i]);
+    count(a,10);
+    return 0;
+}
+void count(int a[],int n)
+{
+    int i,j=0,count=0,k=0,m=0,b[n];
+    for(i=0;i<n;i++)
+    {
+        count=0;
+        for(k=0;k<m;k++)
+
+            if(a[i]==b[k])
+            break;
+        for(j=0;j<n;j++)
+        {
+            if(a[i]==a[j])
+                count++;
+        }
+        if(k==m)
+        {
+            printf("%d=%d ",a[i],count);
+            b[m]=a[i];
+            m++;
+        }
+    }
+}
