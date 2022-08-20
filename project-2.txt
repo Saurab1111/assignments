@@ -15,6 +15,7 @@ int main()
     Rules();
     while(D)
     {
+        system("cls");
         int x=game(name,20,&k);
         if(x==1)
             D=x;
@@ -106,7 +107,7 @@ int game(char name[],int size,int *K)
         printf("\n");
     }
     printf(" -------------------\n");
-    for(i=0;i<=300;i++)
+    for(i=1;i<=300;i++)
     {
         int ex=getch();
           if(ex==101)
@@ -140,7 +141,7 @@ int game(char name[],int size,int *K)
             i--;
         system("cls");
         system("COLOR 03");
-        printf("Hii,%s chance remaining:%d\n",name,299-i);
+        printf("Hii,%s chance remaining:%d\n",name,300-i);
         system("COLOR 01");
         printf(" -------------------\n");
         for(x=0;x<4;x++)
@@ -261,3 +262,5 @@ int DECISION(int (*a)[4],int size)
     else
         return 3;
 }
+
+
