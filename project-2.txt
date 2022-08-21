@@ -2,6 +2,7 @@
 #include<conio.h>
 void Rules();
 int DECISION(int (*)[],int);
+void array(int (*)[],int ,int );
 int lose();
 void win();
 int game(char[],int,int*);
