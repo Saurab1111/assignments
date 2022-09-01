@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<conio.h>
+#include<stdlib.h>
 void Rules();
 int DECISION(int (*)[],int);
-void array(int (*)[],int ,int );
 int lose();
 void win();
 int game(char[],int,int*);
@@ -117,7 +117,7 @@ int game(char name[],int size,int *K)
         if(str[i]==77&&n!=0)
         {
 
-            a[m][n]=a[m][n-1];
+           a[m][n]=a[m][n-1];
             a[m][--n]=' ';
         }
 
@@ -178,36 +178,69 @@ int game(char name[],int size,int *K)
 }
 void array(int (*a)[4],int w,int z)
 {
-    int x,y,i,j;
-    x=a;
-    y=x%10+z;
-    if(y==0)
-    y=4;
-    if(y<0)
-     y*=-1;
-     if(y>15)
-     y=3;
-    x=y;
-    for(i=0;i<w;i++)
-      for(j=0;j<w;j++)
+    int x,y,i,j,k,l,d=0,g=4;
+    srand(time(NULL));
+    for(i=0;i<3;i++)
     {
-     if(y<=15)
-      {
-        a[i][j]=y;
-        y++;
-      }
-    else
-     {
-       x--;
-       a[i][j]=x;
-     }
+        for(j=0;j<4&&(i!=2||j<2);j++)
+        {
+            d=0;
+            x=rand()%10;
+            for(k=0;k<=i;k++)
+            {
+                if(k!=i)
+                {
+                    for(g=0;g<4;g++)
+                    {
+                        if(x==a[k][g])
+                            break;
+                    }
+                }
+                if(g!=4)
+                    break;
+
+                if(k==i)
+                {
+                    for(l=0;l<j;l++)
+                    {
+                        if(x==a[k][l])
+                            break;
+                    }
+                }
+            }
+            if(l==j&&k==i+1&&g==4)
+                a[i][j]=x;
+            else
+                j--;
+        }
     }
-    x=a[0][2];
-    a[0][2]=a[1][2];
-    a[1][2]=x;
-    x=a[2][1];
-    a[2][1]=a[3][1];
-    a[3][1]=x;
+    w=11;
+     for(i=0;i<4;i++)
+    {
+       for(j=0;j<4;j++)
+       {
+           if(a[i][j]==0)
+            a[i][j]=10;
+       }
+    }
+    a[2][2]=11;
+    a[2][3]=12;
+    g=13;
+    for(i=3;i<4;i++)
+    {
+        for(j=0;j<4;j++)
+            {
+                a[i][j]=g;
+                g++;
+            }
+    }
+
+    k=a[0][1];
+    a[0][1]=a[3][1];
+    a[3][1]=k;
+    k=a[1][2];
+    a[1][2]=a[2][3];
+    a[2][3]=k;
 }
 int lose()
 {
@@ -263,5 +296,3 @@ int DECISION(int (*a)[4],int size)
     else
         return 3;
 }
-
-
