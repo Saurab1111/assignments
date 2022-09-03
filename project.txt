@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include<stdio.h>#
 #include<conio.h>
 #include<stdlib.h>
 int win(int a[][3],char c,int,char[],char[]);
@@ -579,7 +579,8 @@ void display(int (*p)[3])
 void computer_rule()
 {
   system("cls");
-  system("COLOR F4");
+  printf("                   $$$$ SMART TIC TAC TOE $$$  \n");
+  system("COLOR 04");
   printf("\n1.IF YOU MARK THE POSITION WHICH IS ALREADY MARKED YOU WILL GET ANOTHER CHANCE:\n");
   printf("\n2.COPUTER IS NOT JUST STOPPING YOU TO WIN BUT CAN ALSO WIN IF GET SUCH CHANCE:\n");
   printf("\n3.YOU CAN WIN THE GAME IF YOU CAN ABLE TO PUT MARKS SIMULTANEOUSLY IN 3 HORIZONTAL/VERTICAL/DIAGONAL POSITIONS:\n");
@@ -615,7 +616,8 @@ int tie(int (*p)[3])
 void player_rule()
 {
     system("cls");
-    system("COLOR F4");
+    system("COLOR 04");
+    printf("                   $$$$ SMART TIC TAC TOE $$$  \n");
     printf("\n1.IF ANY OF YOU MARK THE POSITION WHICH IS ALREADY MARKED HE/SHE WILL GET ANOTHER CHANCE:\n");
     printf("\n3.YOU CAN WIN THE GAME IF YOU CAN ABLE TO PUT MARKS SIMULTANEOUSLY IN 3 HORIZONTAL/VERTICAL/DIAGONAL POSITIONS:\n");
     printf("\n4.IF BOTH OF YOU FAILED TO WIN THE MATCH IT WILL END AT TIE!!:\n");
