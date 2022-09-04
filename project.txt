@@ -322,13 +322,13 @@ int win(int a[][3],char c,int type,char name[],char name1[])
 }
 int computer_turn(int (*p)[3],char c,char d,int game_type)
 {
-  int i,j,m,n,*q[9],k=0,count,count1,correct=0; //*q to remember winning places of player
-  int xtime,place; //place is empty position and xtime represent no of x in row/col/diagonal
+  int i,j,m,n,*q[9],k=0,count,count1; //*q to remember winning places of player
+  int xtime,place,correct=0; //place is empty position and xtime represent no of x in row/col/diagonal
   q[0]=NULL;  //safe code
   /*Computer trying to win and remembering the positions where user can win*/
   for(i=0;i<3;i++)
   {
-          count=0;count1=0,correct=0;
+          count=0;count1=0,correct=0; //correct to avoid previous m and y values
           for(j=0;j<3;j++)
           {
               if(p[i][j]==d)
@@ -341,7 +341,7 @@ int computer_turn(int (*p)[3],char c,char d,int game_type)
               correct=1;
           }
           }
-          if(count1==2&&(p[m][n]>47&&p[m][n]<58))  //checking winning situation for itself
+          if(count1==2&&(p[m][n]>47&&p[m][n]<58)&&correct==1)  //checking winning situation for itself
           {
               p[m][n]=c;
               return 1;
@@ -350,6 +350,7 @@ int computer_turn(int (*p)[3],char c,char d,int game_type)
           {
               q[k]=&p[m][n];//remembering the place where player can use
               k++;
+              //printf("row\n");
           }
   }
   for(j=0;j<3;j++)
@@ -360,7 +361,9 @@ int computer_turn(int (*p)[3],char c,char d,int game_type)
 
 
               if(p[i][j]==d)
-                count++;
+                {
+                    count++;
+                }
               else if(p[i][j]==c)
                 count1++;
               else
@@ -369,7 +372,7 @@ int computer_turn(int (*p)[3],char c,char d,int game_type)
               correct=1;
           }
         }
-          if(count1==2&&(p[m][n]>47&&p[m][n]<58)) //checking winning situation for itself
+          if(count1==2&&(p[m][n]>47&&p[m][n]<58)&&correct==1) //checking winning situation for itself
           {
               p[m][n]=c;
               return 1;
@@ -397,7 +400,7 @@ int computer_turn(int (*p)[3],char c,char d,int game_type)
           }
       }
   }
-  if(count1==2&&(p[m][n]>47&&p[m][n]<58)) //checking winning situation for itself
+  if(count1==2&&(p[m][n]>47&&p[m][n]<58)&&correct==1) //checking winning situation for itself
           {
               p[m][n]=c;
               return 1;
@@ -421,7 +424,7 @@ int computer_turn(int (*p)[3],char c,char d,int game_type)
           }
         j--;
   }
-         if(count1==2&&(p[m][n]>47&&p[m][n]<58)) //checking winning situation for itself
+         if(count1==2&&(p[m][n]>47&&p[m][n]<58)&&correct==1) //checking winning situation for itself
           {
               p[m][n]=c;
               return 1;
@@ -586,7 +589,7 @@ void computer_rule()
   printf("                   $$$$ SMART TIC TAC TOE $$$  \n");
   system("COLOR 04");
   printf("\n1.IF YOU MARK THE POSITION WHICH IS ALREADY MARKED YOU WILL GET ANOTHER CHANCE:\n");
-  printf("\n2.COPUTER IS NOT JUST STOPPING YOU TO WIN BUT CAN ALSO WIN IF GET SUCH CHANCE:\n");
+  printf("\n2.COMPUTER IS NOT JUST STOPPING YOU TO WIN BUT CAN ALSO WIN IF GET SUCH CHANCE:\n");
   printf("\n3.YOU CAN WIN THE GAME IF YOU CAN ABLE TO PUT MARKS SIMULTANEOUSLY IN 3 HORIZONTAL/VERTICAL/DIAGONAL POSITIONS:\n");
   printf("\n4.IF BOTH OF YOU FAILED TO WIN THE MATCH IT WILL END AT TIE!!:\n");
   printf("\n4.YOU CAN EXIT GAME AT ANT TIME BY ENTERING 0 AS POSITION!!:\n");
