@@ -212,8 +212,8 @@ int win(int a[][3],char c,int type,char name[],char name1[])
         }
         if(count==3)
         {
-            display(a);
             system("cls");
+            display(a);
             if(type==1)
             {
                 c=='X'?printf("%s won it!!\n",name1):printf("%s have won the game!!\n",name);
@@ -244,8 +244,8 @@ int win(int a[][3],char c,int type,char name[],char name1[])
         }
         if(count==3)
         {
-            display(a);
             system("cls");
+            display(a);
             if(type==1)
             {
                 c=='X'?printf("Computer won it!!\n"):printf("You have won the game!!\n");
@@ -276,8 +276,8 @@ int win(int a[][3],char c,int type,char name[],char name1[])
         }
         if(count==3)
         {
-            display(a);
             system("cls");
+            display(a);
             if(type==1)
             {
                 c=='X'?printf("Computer won it!!\n"):printf("You have won the game!!\n");
@@ -298,9 +298,8 @@ int win(int a[][3],char c,int type,char name[],char name1[])
      }
    if(a[0][2]==c&&a[1][1]==c&&a[2][0]==c)
    {
-
-            display(a);
             system("cls");
+            display(a);
             if(type==1)
             {
                 c=='X'?printf("Computer won it!!\n"):printf("You have won the game!!\n");
