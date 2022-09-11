@@ -104,6 +104,7 @@ int Computer(int game_type)
         system("COLOR 0B");
         while(D)
         {
+            position=10;
             fflush(stdin);
             printf("\n%s enter position no at which you want mark:",name);
             scanf("%d",&position);
@@ -149,8 +150,10 @@ int player()
         system("COLOR 0B");
         while(D)
         {
+            position=10;
             if(turn%2==0)
             {
+             fflush(stdin);
              printf("\n%s enter position no at which you want mark:",name);
              scanf("%d",&position);
              if(position==0)
@@ -158,6 +161,7 @@ int player()
             }
             else
             {
+             fflush(stdin);
              printf("\n%s enter position no at which you want mark:",name1);
              scanf("%d",&position);
              if(position==0)
@@ -204,7 +208,12 @@ int player_turn(int (*p)[3],int position,int turn)
                         return 0;
                     }
                     else
-                        return 1;
+                        {
+                            printf("\nEntered marked position!!");
+                            printf("\nEnter any key to \"RESUME\" the game");
+                            getch();
+                            return 1;
+                        }
                 }
             else if(count==position&&turn%2!=0)
                 {
@@ -214,17 +223,22 @@ int player_turn(int (*p)[3],int position,int turn)
                         return 0;
                     }
                     else
-                        return 1;
+                        {
+                            printf("\nEnter marked position!!");
+                            printf("\nEnter any key to \"RESUME\" the game");
+                            getch();
+                            return 1;
+                        }
                 }
              count++;
         }
    }
     }
-  printf("\nEnter valid key!!");
-  printf("\nEnter any key to \"RESUME\" the game");
-  getch();
-  fflush(stdin);
-  return 1;
+    printf("\nEnter valid key!!");
+    printf("\nEnter any key to \"RESUME\" the game");
+    getch();
+    return 1;
+
 }
 int win(int a[][3],char c,int type,char name[],char name1[])
 {
