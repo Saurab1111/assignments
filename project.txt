@@ -234,6 +234,13 @@ int player_turn(int (*p)[3],int position,int turn)
         }
    }
     }
+    if(position==10)
+    {
+        printf("\nEnter valid key!!");
+        printf("\nEnter any key to \"RESUME\" the game");
+        getch();
+        return 1;
+    }
     printf("\nEnter valid key!!");
     printf("\nEnter any key to \"RESUME\" the game");
     getch();
